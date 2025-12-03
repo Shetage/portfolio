@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atharva Shetage | AI Portfolio</title>
+
+    <style>
+        /* ---- DARK GLASSMORPHISM THEME ---- */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent: #38bdf8;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%);
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav h2 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Hero */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            background: transparent;
+            color: var(--accent);
+            padding: 12px 30px;
+            border: 1px solid var(--accent);
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            transition: 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title::after {
+            content: "";
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            flex: 1;
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+        .info-list li {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+        .info-list strong {
+            color: var(--accent);
+        }
+
+        /* Skills */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-title { 
+            font-size: 1.25rem; 
+            margin-bottom: 10px; 
+        }
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .project-link {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile */
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-content { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- NAVBAR -->
+        <nav>
+            <h2>Atharva.DS</h2>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- HERO -->
+        <header class="hero">
+            <div>
+                <p>Hello, my name is</p>
+                <h1>Atharva Shetage.</h1>
+                <p>I am a B.Tech Student (AI & DS) at Zeal College. I build intelligent systems and data-driven applications.</p>
+                <a href="#projects" class="btn">Check out my projects</a>
+            </div>
+        </header>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2 class="section-title">01. About Me</h2>
+            <div class="about-content">
+                <div class="glass-card">
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        I am currently a Second Year student specializing in Artificial Intelligence & Data Science in Pune. 
+                        I enjoy solving real-world problems through code and have strong interest in Machine Learning and Cloud Technologies.
+                    </p>
+                    <p style="color: var(--text-muted);">
+                        My goal is to become a proficient Data Scientist and work on impactful tech solutions.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <ul class="info-list">
+                        <li><strong>Location:</strong> Pune, Maharashtra</li>
+                        <li><strong>Email:</strong> atharv.shetage@email.com</li>
+                        <li><strong>Phone:</strong> 8237974947</li>
+                        <li><strong>College:</strong> Zeal College of Engineering</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2 class="section-title">02. Technical Skills</h2>
+            <div class="skills-wrapper">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">VS Code</span>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2 class="section-title">03. Some Things I've Built</h2>
+            <div class="projects-grid">
+
+                <div class="glass-card">
+                    <h3 class="project-title">House Price Prediction</h3>
+                    <p class="project-desc">
+                        Machine Learning model predicting housing prices using Linear Regression & data preprocessing.
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--accent); margin-bottom: 15px;">Python · Scikit-learn · Pandas</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+
+                <div class="glass-card">
+                    <h3 class="project-title">Student Management System</h3>
+                    <p class="project-desc">
+                        Python-based DBMS project to manage student records, attendance & marks with GUI.
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--accent); margin-bottom: 15px;">Python · MySQL · Tkinter</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+
+                <div class="glass-card">
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-desc">
+                        A modern, dark-themed portfolio website made using HTML & CSS.
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--accent); margin-bottom: 15px;">HTML5 · CSS3</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="contact">
+            <h2 style="color: #fff; margin-bottom: 10px;">Get In Touch</h2>
+            <p style="margin-bottom: 30px;">I am open for new opportunities. My inbox is always open.</p>
+            <a href="mailto:atharv.shetage@email.com" class="btn">Say Hello</a>
+
+            <br><br><br>
+            <p>Designed & Built by Atharva Shetage</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
